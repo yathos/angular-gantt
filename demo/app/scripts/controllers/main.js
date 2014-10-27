@@ -25,6 +25,7 @@ angular.module('angularGanttDemoApp')
             readOnly: false,
             filterTask: undefined,
             filterRow: undefined,
+            show: false,
             timeFrames:
                  {'day': {
                     start: moment('8:00', 'HH:mm'),
@@ -76,6 +77,7 @@ angular.module('angularGanttDemoApp')
             $timeout(function() {
                 $scope.scrollToDate($scope.options.currentDateValue);
             }, 0, true);
+            $scope.options.show = true;
         });
 
         $scope.addSamples = function() {
