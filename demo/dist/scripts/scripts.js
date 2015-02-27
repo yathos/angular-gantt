@@ -505,7 +505,10 @@ angular.module('angularGanttDemoApp')
                         {name: 'Sprint 1', tooltips: false, tasks: [
                             {name: 'Product list view', color: '#F1C232', from: new Date(2013, 9, 21, 8, 0, 0), to: new Date(2013, 9, 25, 15, 0, 0),
                                 progress: 25}
-                        ]},
+                        ], 'columnContents': {
+                            'from': '<a href="http://www.google.com">{{getValue()}}</a>'
+                        }
+                        },
                         {name: 'Sprint 2', tasks: [
                             {name: 'Order basket', color: '#F1C232', from: new Date(2013, 9, 28, 8, 0, 0), to: new Date(2013, 10, 1, 15, 0, 0)}
                         ]},
