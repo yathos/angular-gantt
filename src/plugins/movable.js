@@ -174,8 +174,13 @@
                                         var sourceRow = taskScope.task.row;
 
                                         if (targetRow !== undefined && sourceRow !== targetRow) {
-                                            targetRow.moveTaskToRow(taskScope.task, true);
-                                            taskHasBeenChanged = true;
+                                            var disableTaskDropping = utils.firstProperty([targetRow.model], 'disableTaskDropping', false);
+                                            if(!disableTaskDropping){
+                                              targetRow.moveTaskToRow(taskScope.task, true);
+                                              sourceRow.$scope.$digest();
+                                              targetRow.$scope.$digest();
+                                              taskHasBeenChanged = true;
+                                            }
                                         }
                                     }
 
